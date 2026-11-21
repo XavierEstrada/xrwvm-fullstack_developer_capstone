@@ -33,8 +33,16 @@ LAB_HOST = (
     '.proxy.cognitiveclass.ai'
 )
 
-ALLOWED_HOSTS = ['localhost', 'https://' + LAB_HOST, LAB_HOST]
-CSRF_TRUSTED_ORIGINS = ['https://' + LAB_HOST]
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    LAB_HOST,
+    '.proxy.cognitiveclass.ai',
+]
+CSRF_TRUSTED_ORIGINS = [
+    'https://' + LAB_HOST,
+    'https://*.proxy.cognitiveclass.ai',
+]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [],
